@@ -65,3 +65,23 @@ console.log("Squares:", squares);
 const evenNumbers = numbers.filter(num => num % 2 === 0);
 
 console.log("Even Numbers:", evenNumbers);
+// ==============================
+// Task 3 - Fetch API
+// ==============================
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(data => {
+
+        const firstFivePosts = data.slice(0, 5);
+
+        console.log("First Five Posts:");
+
+        firstFivePosts.forEach(post => {
+            console.log(post.title);
+        });
+
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
