@@ -85,3 +85,41 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     .catch(error => {
         console.log("Error:", error);
     });
+    // ==============================
+// Task 4 - Async Programming & Error Handling
+// ==============================
+
+// Successful Request
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Request Failed");
+        }
+        return response.json();
+    })
+    .then(users => {
+        console.log("Users:");
+
+        users.forEach(user => {
+            console.log(`${user.name} - ${user.email}`);
+        });
+    })
+    .catch(error => {
+        console.log("Error:", error.message);
+    });
+
+
+// Failed Request
+fetch("https://jsonplaceholder.typicode.com/invalid-url")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Request Failed");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("Failed Request:", error.message);
+    });
