@@ -8,21 +8,57 @@ const userTable = document.getElementById("userTable");
 
 const getUsers = () => {
 
+const users = [
 
-fetch("https://jsonplaceholder.typicode.com/users")
+{
+id:1,
+name:"Komal",
+email:"komal@gmail.com",
+address:{
+city:"Abbottabad"
+}
+},
+
+{
+id:2,
+name:"Aown",
+email:"aown@gmail.com",
+address:{
+city:"Islamabad"
+}
+},
+
+{
+id:3,
+name:"Ali",
+email:"ali@gmail.com",
+address:{
+city:"Karachi"
+}
+},
+
+{
+id:4,
+name:"Sara",
+email:"sara@gmail.com",
+address:{
+city:"Islamabad"
+}
+},
+
+{
+id:5,
+name:"Eshal",
+email:"eshal@gmail.com",
+address:{
+city:"Islamabad"
+}
+},
+
+];
 
 
-.then(response => response.json())
-
-
-.then(users => {
-
-
-    displayUsers(users);
-
-
-});
-
+displayUsers(users);
 
 };
 
